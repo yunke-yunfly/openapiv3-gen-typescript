@@ -1,0 +1,206 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "bff-act-t",
+    "description": "BFF端生成Api文档，并对接到middleman平台。",
+    "version": "1.0.0",
+    "contact": {
+      "name": "zane",
+      "email": "wangw19@mingyuanyun.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "B_ActivityController",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/tapi/b_activity/get_act_details": {
+      "get": {
+        "tags": ["B_ActivityController"],
+        "summary": "后台获取活动详情",
+        "description": "B_ActivityController.getActDetails  ",
+        "operationId": "B_ActivityController.get.getActDetails.bjWHnbNHPc",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/GetActDetailsResponse"
+                    },
+                    "msg": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["code"],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "活动id (@QueryParam, 类型：string)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scene_type",
+            "in": "query",
+            "description": "活动场景值 (@QueryParam, 类型：number)",
+            "required": true,
+            "schema": {
+              "type": "number"
+            },
+            "example": "0"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["ExampleController"],
+        "summary": "测试用例",
+        "description": "ExampleController.jest 测试案例controller ",
+        "operationId": "ExampleController.post.jest.GzbncJxNbQ",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "number",
+                      "description": "接口返回code码字段"
+                    },
+                    "data": {
+                      "type": "string"
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": "接口返回信息字段"
+                    }
+                  },
+                  "required": ["code", "data"]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "@BodyParam"
+                  }
+                },
+                "required": ["name"]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetActDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "module_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ac_module_component.Module"
+            }
+          }
+        },
+        "required": ["module_list"],
+        "additionalProperties": false
+      },
+      "ac_module_component.Module": {
+        "type": "object",
+        "properties": {
+          "module_id": {
+            "type": "string",
+            "description": "模块ID（新增不传，修改时传）"
+          },
+          "module_title": {
+            "type": "string",
+            "description": "模块标题"
+          },
+          "module_sort": {
+            "type": "number",
+            "description": "模块在页面中的位置"
+          },
+          "module_type": {
+            "type": "number",
+            "description": "模块类型：1.banner模块，2.模块导航模块，3.TAB切换，4.视频模块，5.悬浮图模块，6.地理位置模块，7.楼盘推荐模块，8.定向跳转模块"
+          },
+          "module_param": {
+            "type": "string",
+            "description": "模块自定义参数"
+          },
+          "component_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ac_module_component.Component"
+            },
+            "description": "单件列表"
+          }
+        },
+        "required": ["module_sort", "module_type", "component_list"],
+        "additionalProperties": false
+      },
+      "ac_module_component.Component": {
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "description": "单件ID（新增不传，修改时传）"
+          },
+          "component_title": {
+            "type": "string",
+            "description": "单件标题"
+          },
+          "component_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ac_module_component.Component"
+            },
+            "description": "单件 嵌套结构"
+          },
+          "nested_context": {
+            "type": "string",
+            "description": "单件的嵌套内容 （临时方案）"
+          }
+        },
+        "required": ["component_sort", "component_param"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:3000",
+      "description": "开发环境域名前缀"
+    }
+  ]
+}

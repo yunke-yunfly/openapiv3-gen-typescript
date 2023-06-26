@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`apis getApis 1`] = `
+Array [
+  Object {
+    "body": undefined,
+    "cookie": Array [],
+    "description": "B_ActivityController.getActDetails  ",
+    "header": Array [],
+    "method": "get",
+    "operationId": "B_ActivityController.get.getActDetails.bjWHnbNHPc",
+    "params": Array [],
+    "query": Array [
+      Object {
+        "description": "活动id (@QueryParam, 类型：string)",
+        "in": "query",
+        "name": "id",
+        "required": true,
+        "schema": Object {
+          "type": "string",
+        },
+      },
+      Object {
+        "description": "活动场景值 (@QueryParam, 类型：number)",
+        "example": "0",
+        "in": "query",
+        "name": "scene_type",
+        "required": true,
+        "schema": Object {
+          "type": "number",
+        },
+      },
+    ],
+    "response": Object {
+      "200": Object {
+        "description": "",
+        "schema": Object {
+          "additionalProperties": false,
+          "properties": Object {
+            "code": Object {
+              "type": "number",
+            },
+            "data": Object {
+              "$ref": "#/components/schemas/GetActDetailsResponse",
+            },
+            "msg": Object {
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "code",
+          ],
+          "type": "object",
+        },
+      },
+    },
+    "summary": "后台获取活动详情",
+    "tags": Array [
+      "B_ActivityController",
+    ],
+    "url": "/tapi/b_activity/get_act_details",
+  },
+  Object {
+    "body": Object {
+      "properties": Object {
+        "name": Object {
+          "description": "@BodyParam",
+          "type": "string",
+        },
+      },
+      "required": Array [
+        "name",
+      ],
+      "type": "object",
+    },
+    "cookie": Array [],
+    "description": "ExampleController.jest 测试案例controller ",
+    "header": Array [],
+    "method": "post",
+    "operationId": "ExampleController.post.jest.GzbncJxNbQ",
+    "params": Array [],
+    "query": Array [],
+    "response": Object {
+      "200": Object {
+        "description": "",
+        "schema": Object {
+          "properties": Object {
+            "code": Object {
+              "description": "接口返回code码字段",
+              "type": "number",
+            },
+            "data": Object {
+              "type": "string",
+            },
+            "msg": Object {
+              "description": "接口返回信息字段",
+              "type": "string",
+            },
+          },
+          "required": Array [
+            "code",
+            "data",
+          ],
+          "type": "object",
+        },
+      },
+    },
+    "summary": "测试用例",
+    "tags": Array [
+      "ExampleController",
+    ],
+    "url": "/tapi/b_activity/get_act_details",
+  },
+]
+`;

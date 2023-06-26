@@ -1,0 +1,42 @@
+{
+  "version": "0.1",
+  "language": "en",
+  "words": [
+    "typeof",
+    "cnpm",
+    "tyarn",
+    "globby",
+    "umijs",
+    "eslintignore",
+    "editorconfig",
+    "commitlint",
+    "prettierignore",
+    "prettierrc",
+    "commitlintrc",
+    "yunke",
+    "followtags",
+    "ycli",
+    "openapi",
+    "orgcode",
+    "APIV",
+    "yundoc",
+    "nocheck",
+    "pascalcase",
+    "yunflyjs",
+    "openapiv",
+    "codecov"
+  ],
+  "ignorePaths": [
+    "package.json",
+    "openapi.json",
+    "node_modules/**",
+    "dist/**",
+    "**/*.snap",
+    "coverage/**",
+    "__tests_output__",
+    ".eslintrc.js",
+    "cspell.json",
+    "getOpenApiDoc.test.ts",
+    "ypack.config.ts"
+  ]
+}

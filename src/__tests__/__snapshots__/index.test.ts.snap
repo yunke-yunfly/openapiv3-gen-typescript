@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getGenData 1`] = `
+Array [
+  Object {
+    "content": "export interface GetActDetailsResponse {
+module_list: AcModuleComponentModule[]
+}
+export interface AcModuleComponentModule {
+/**
+ * 模块ID（新增不传，修改时传）
+ */
+module_id?: string
+/**
+ * 模块标题
+ */
+module_title?: string
+/**
+ * 模块在页面中的位置
+ */
+module_sort: number
+/**
+ * 模块类型：1.banner模块，2.模块导航模块，3.TAB切换，4.视频模块，5.悬浮图模块，6.地理位置模块，7.楼盘推荐模块，8.定向跳转模块
+ */
+module_type: number
+/**
+ * 模块自定义参数
+ */
+module_param?: string
+/**
+ * 单件列表
+ */
+component_list: AcModuleComponentComponent[]
+}
+export interface AcModuleComponentComponent {
+/**
+ * 单件ID（新增不传，修改时传）
+ */
+component_id?: string
+/**
+ * 单件标题
+ */
+component_title?: string
+/**
+ * 单件 嵌套结构
+ */
+component_list?: AcModuleComponentComponent[]
+/**
+ * 单件的嵌套内容 （临时方案）
+ */
+nested_context?: string
+}",
+    "fileName": "common.d.ts",
+  },
+  Object {
+    "content": "export * from './types/B_ActivityController'
+export * from './types/ExampleController'",
+    "fileName": "./types.d.ts",
+  },
+  Object {
+    "content": "export namespace BActivityController {
+ 
+        /**
+         * 后台获取活动详情
+         *
+         * @description B_ActivityController.getActDetails  
+         */
+export namespace BActivityControllerGetGetActDetailsBjWHnbNHPc {
+      export interface Query {
+/**
+ * 活动id (@QueryParam, 类型：string)
+ */
+id: string
+/**
+ * 活动场景值 (@QueryParam, 类型：number)
+ */
+scene_type: number
+}
+
+      
+export interface Data {
+code: number
+data?: GetActDetailsResponse
+msg?: string
+}
+export interface GetActDetailsResponse {
+module_list: AcModuleComponentModule[]
+}
+export interface AcModuleComponentModule {
+/**
+ * 模块ID（新增不传，修改时传）
+ */
+module_id?: string
+/**
+ * 模块标题
+ */
+module_title?: string
+/**
+ * 模块在页面中的位置
+ */
+module_sort: number
+/**
+ * 模块类型：1.banner模块，2.模块导航模块，3.TAB切换，4.视频模块，5.悬浮图模块，6.地理位置模块，7.楼盘推荐模块，8.定向跳转模块
+ */
+module_type: number
+/**
+ * 模块自定义参数
+ */
+module_param?: string
+/**
+ * 单件列表
+ */
+component_list: AcModuleComponentComponent[]
+}
+export interface AcModuleComponentComponent {
+/**
+ * 单件ID（新增不传，修改时传）
+ */
+component_id?: string
+/**
+ * 单件标题
+ */
+component_title?: string
+/**
+ * 单件 嵌套结构
+ */
+component_list?: AcModuleComponentComponent[]
+/**
+ * 单件的嵌套内容 （临时方案）
+ */
+nested_context?: string
+}
+
+      export type Response = Promise<Data>
+    }
+  
+}
+export default BActivityController",
+    "fileName": "./types/B_ActivityController.d.ts",
+  },
+  Object {
+    "content": "export namespace ExampleController {
+ 
+        /**
+         * 测试用例
+         *
+         * @description ExampleController.jest 测试案例controller 
+         */
+export namespace ExampleControllerPostJestGzbncJxNbQ {
+      export interface Body {
+/**
+ * @BodyParam
+ */
+name: string
+[k: string]: any
+}
+
+      export interface Data {
+/**
+ * 接口返回code码字段
+ */
+code: number
+data: string
+/**
+ * 接口返回信息字段
+ */
+msg?: string
+[k: string]: any
+}
+
+      export type Response = Promise<Data>
+    }
+  
+}
+export default ExampleController",
+    "fileName": "./types/ExampleController.d.ts",
+  },
+  Object {
+    "content": "import request from 'axios'
+import Api from '../types/B_ActivityController'
+
+        /**
+         * 后台获取活动详情
+         *
+         * @description B_ActivityController.getActDetails  
+         */
+export function B_ActivityController.get.getActDetails.bjWHnbNHPc(query: Api.BActivityControllerGetGetActDetailsBjWHnbNHPc.Query): Api.BActivityControllerGetGetActDetailsBjWHnbNHPc.Response {
+  return request({
+    method: 'GET',
+    url: '/tapi/b_activity/get_act_details',
+    params: query
+  })
+}
+
+",
+    "fileName": "./apis/B_ActivityController.ts",
+  },
+  Object {
+    "content": "import request from 'axios'
+import Api from '../types/ExampleController'
+
+        /**
+         * 测试用例
+         *
+         * @description ExampleController.jest 测试案例controller 
+         */
+export function ExampleController.post.jest.GzbncJxNbQ(body: Api.ExampleControllerPostJestGzbncJxNbQ.Body): Api.ExampleControllerPostJestGzbncJxNbQ.Response {
+  return request({
+    method: 'POST',
+    url: '/tapi/b_activity/get_act_details',
+    data: body
+  })
+}
+
+",
+    "fileName": "./apis/ExampleController.ts",
+  },
+]
+`;

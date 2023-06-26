@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`outputData combineSingleApi query、body、header、cookie、params 不存在时 1`] = `
+"export function getUser(): Api.GetUser.Response {
+  return request({
+    method: 'GET',
+    url: '/user',
+    
+  })
+}
+"
+`;
+
+exports[`outputData combineSingleApi 参数齐全 1`] = `
+"/**
+                    * 我是注释
+                    */
+export function getUser(name: string, age: number, query: Api.GetUser.Query, body: Api.GetUser.Body, header: Api.GetUser.Header): Api.GetUser.Response {
+  return request({
+    method: 'POST',
+    url: \`/user/\${name}\`,
+    params: query,
+    data: body,
+    headers: header
+  })
+}
+"
+`;
+
+exports[`outputData combineSingleType 无 response 且无 successResponseTemplate 1`] = `
+"export namespace GetUser {
+      
+          export interface Body {
+            name: string;
+          }
+        
+      export type Data = any
+      export type Response = Promise<Data>
+    }
+  "
+`;
+
+exports[`outputData combineSingleType 有 response、fnComment、successResponseTemplate 1`] = `
+"/**
+                    * 我是注释
+                    */
+export namespace GetUser {
+      
+          export interface Query {
+            age: number;
+          }
+        
+  
+          export interface Body {
+            name: string;
+          }
+        
+      
+          export interface Response {
+            id: number
+          }
+        
+      export type Response = Promise<ApiResponse<Data>>
+    }
+  "
+`;
+
+exports[`outputData getApiDTs 包含 Types  1`] = `
+Array [
+  Object {
+    "content": "export * from './types/user'",
+    "fileName": "./types.d.ts",
+  },
+  Object {
+    "content": "import Types from '../common';
+export namespace User {
+ export namespace GetUser {
+      
+      
+            interface Data {
+              userInfo: Types.UserInfo
+            }
+          
+      export type Response = Promise<Data>
+    }
+  
+}
+export default User",
+    "fileName": "./types/user.d.ts",
+  },
+]
+`;
+
+exports[`outputData getApiDTs 正常渲染 1`] = `
+Array [
+  Object {
+    "content": "export * from './types/user'
+export * from './types/team'",
+    "fileName": "./types.d.ts",
+  },
+  Object {
+    "content": "export namespace User {
+ export namespace GetUser {
+      
+      export type Data = any
+      export type Response = Promise<Data>
+    }
+  export namespace CreateUser {
+      
+      export type Data = any
+      export type Response = Promise<Data>
+    }
+  
+}
+export default User",
+    "fileName": "./types/user.d.ts",
+  },
+  Object {
+    "content": "export namespace Team {
+ export namespace CreateTeam {
+      
+      export type Data = any
+      export type Response = Promise<Data>
+    }
+  
+}
+export default Team",
+    "fileName": "./types/team.d.ts",
+  },
+]
+`;
+
+exports[`outputData getApis config.requestTemplate 无值 1`] = `
+Array [
+  Object {
+    "content": "import request from '../utils/request'
+import Api from '../types/user'
+export function getUser(): Api.GetUser.Response {
+  return request({
+    method: 'GET',
+    url: '/user',
+    
+  })
+}
+
+",
+    "fileName": "./apis/user.ts",
+  },
+]
+`;
+
+exports[`outputData getApis 正常渲染 1`] = `
+Array [
+  Object {
+    "content": "import { request } from \\"../utils/request\\"
+import Api from '../types/user'
+export function getUser(): Api.GetUser.Response {
+  return request({
+    method: 'GET',
+    url: '/user',
+    
+  })
+}
+
+export function createUser(): Api.CreateUser.Response {
+  return request({
+    method: 'GET',
+    url: '/user',
+    
+  })
+}
+
+",
+    "fileName": "./apis/user.ts",
+  },
+  Object {
+    "content": "import { request } from \\"../utils/request\\"
+import Api from '../types/team'
+export function createTeam(): Api.CreateTeam.Response {
+  return request({
+    method: 'GET',
+    url: '/team',
+    
+  })
+}
+
+",
+    "fileName": "./apis/team.ts",
+  },
+]
+`;
+
+exports[`outputData getOutputData 无 definitions 1`] = `
+Array [
+  Object {
+    "content": "export * from './types/user'",
+    "fileName": "./types.d.ts",
+  },
+  Object {
+    "content": "export namespace User {
+ export namespace GetUser {
+      
+      export type Data = any
+      export type Response = Promise<Data>
+    }
+  
+}
+export default User",
+    "fileName": "./types/user.d.ts",
+  },
+  Object {
+    "content": "import request from 'undefined'
+import Api from '../types/user'
+export function getUser(): Api.GetUser.Response {
+  return request({
+    method: 'GET',
+    url: '/user',
+    
+  })
+}
+
+",
+    "fileName": "./apis/user.ts",
+  },
+]
+`;
+
+exports[`outputData getOutputData 有 definitions 1`] = `
+Array [
+  Object {
+    "content": "export interface Foo {
+/**
+ * 这是 ID
+ */
+id: string
+}",
+    "fileName": "common.d.ts",
+  },
+  Object {
+    "content": "export * from './types/user'",
+    "fileName": "./types.d.ts",
+  },
+  Object {
+    "content": "export namespace User {
+ export namespace GetUser {
+      
+      export type Data = any
+      export type Response = Promise<Data>
+    }
+  
+}
+export default User",
+    "fileName": "./types/user.d.ts",
+  },
+  Object {
+    "content": "import request from 'undefined'
+import Api from '../types/user'
+export function getUser(): Api.GetUser.Response {
+  return request({
+    method: 'GET',
+    url: '/user',
+    
+  })
+}
+
+",
+    "fileName": "./apis/user.ts",
+  },
+]
+`;
