@@ -69,8 +69,8 @@ npx gen-request
 ## API
 
 | 属性           | 说明                  | 类型           | 是否必填 | 默认值    |
-| -------------- | --------------------- | -------------- | -------- | --------- | --- |
-| openapi        | 项目配置              | string         | OpenAPI  | 必填      | -   |
+| -------------- | --------------------- | -------------- | -------- | --------- |
+| openapi        | 项目配置              | string         | OpenAPI  | 必填      |
 | outputDir      | 输出目录              | string         | 必填     | -         |
 | axiosFilePath  | 自定义 axios 文件     | string         | 否       | `'axios'` |
 | resolver       | 自定义解析逻辑        | `ResolverType` | 否       | -         |
