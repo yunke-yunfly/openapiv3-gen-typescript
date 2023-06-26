@@ -23,6 +23,7 @@
     "test:coverage": "umi-test --coverage",
     "ci": "yarn tsc --noEmit && yarn spell-check:all && yarn test",
     "lint:all": "yarn eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "send-coverage": "codecov -f coverage/*.json",
     "spell-check:all": "cspell \"**/*.{txt,ts,tsx,js,json,md}\"",
     "prettier": "prettier --write \"**/**.{js,jsx,tsx,ts,less,md,json}\"",
     "setPushFollowTags": "echo '本地项目设置git push代码时自动push tag' && git config push.followtags true",
