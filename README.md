@@ -6,7 +6,7 @@
 
 通过 openapi3 或者 swagger 格式的文件生成前端类型定义和请求代码。
 
-![demo](https://yunke-oss.oss-cn-hangzhou.aliyuncs.com/bff-basis-fe-sites/imgs/2021/09/28/1632822472211-0-request-gen.gif)
+![demo](https://github.com/yunke-yunfly/openapiv3-gen-typescript/blob/master/image/request-gen.gif?raw=true)
 
 ## 特性
 
