@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@yunke/eslint-config-ts'],
+  extends: [require.resolve('@umijs/fabric/dist/eslint')],
   rules: {
     indent: 'off',
     '@typescript-eslint/type-annotation-spacing': 0,
